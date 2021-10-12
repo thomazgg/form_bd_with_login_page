@@ -1,0 +1,323 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+/* ! Geral
+! ----------------------------------------------- */
+
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(45deg, #8e2de2, #4a00e0);
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  padding: 2rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-around !important;
+}
+
+main h1 {
+  padding: 10px;
+  text-align: center;
+}
+
+main h2 {
+  font-weight: 600;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+main h2::before {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  bottom: -10px;
+  left: 0;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #8e2de2, #4a00e0);
+}
+
+@media only screen and (max-width: 1400px) {
+  /* For mobile: */
+  main {
+    display: table;
+  }
+}
+
+/* ! Alerta Erro
+! ----------------------------------------------- */
+
+.alerta {
+  padding: 25px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  margin: 10px;
+  font-size: 18px;
+  min-width: 10vh;
+  min-height: 10vh;
+  padding: 2rem;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+.error {
+  border-color: #e8273b;
+  color: #fff;
+  background-color: #ed5565;
+}
+.sucesso {
+  border-color: #87c940;
+  color: #fff;
+  background-color: #a0d468;
+}
+.atencao {
+  border-color: #f4a911;
+  color: #fff;
+  background-color: #f6bb42;
+}
+.info {
+  border-color: #2f80e7;
+  color: #fff;
+  background-color: #5d9cec;
+}
+
+/* ! Form & Text area
+! ----------------------------------------------- */
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+select,
+textarea {
+  font-family: sans-serif;
+  font-size: 1em;
+  border-radius: 10px;
+  padding: 0.6rem 1.3rem;
+}
+
+.input-field {
+  position: relative;
+}
+
+form .input-field:first-child {
+  margin-bottom: 1.5rem;
+}
+
+.input-field .underline::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  bottom: -5px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.input-field .underline::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  bottom: -5px;
+  left: 0;
+  background: linear-gradient(45deg, #8e2de2, #4a00e0);
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+  transform-origin: left;
+}
+
+.input-field input:focus ~ .underline::after {
+  transform: scaleX(1);
+}
+
+.input-field input {
+  outline: none;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+}
+
+.input-field input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* ! Campo & Input
+! ----------------------------------------------- */
+
+.campo {
+  margin-bottom: 1em;
+}
+.campo label {
+  margin-bottom: 0.2em;
+  display: flex;
+}
+
+.campo .focus label {
+  top: 0;
+  transform: translateY(-50%);
+  left: 25px;
+  font-size: 0.8rem;
+}
+
+.campo input[type="text"],
+.campo input[type="password"],
+.campo input[type="email"],
+.campo input[type="date"],
+.campo input[type="number"],
+.campo select,
+.campo textarea {
+  padding: 0.2em;
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.campo select option {
+  padding-right: 1em;
+}
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  background: #8fb1ff;
+}
+
+/* ! Content-table
+! ----------------------------------------------- */
+
+.content-table {
+  border-collapse: collapse;
+  background: #ffffff;
+  font-size: 1em;
+  border-radius: 30px 30px 0 0;
+  overflow: hidden;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15);
+  min-width: 10vh;
+  display: inline-table;
+}
+
+.content-table thead tr {
+  background-color: rgb(79, 0, 152);
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+  overflow: auto;
+  /* 
+  border-bottom: 1px solid #dddddd;
+  */
+}
+
+.content-table tbody tr:hover {
+  background-color: #f3f3f3;
+  color: rgb(132, 0, 255);
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid rgb(132, 0, 255);
+}
+
+/* ! Button
+! ----------------------------------------------- */
+
+input[type="submit"],
+input[type="button"] {
+  margin-top: 2rem;
+  padding: 0.4rem;
+  width: 100%;
+  background: linear-gradient(to left, #4776e6, #8e54e9);
+  cursor: pointer;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 300;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  letter-spacing: 0.5px;
+  background: linear-gradient(to right, #4776e6, #8e54e9);
+}
+
+input[type="button2"] {
+  margin-top: 2rem;
+  padding: 0.4rem;
+  background: linear-gradient(to left, #4776e6, #8e54e9);
+  cursor: pointer;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 300;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+/* ! ScrollBar
+! ----------------------------------------------- */
+
+::-webkit-scrollbar {
+  width: 0;
+}
+#scrollPath {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+}
+#progressbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 15px;
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(to top, #fcb045, #fd1d1d, #833ab4);
+  animation: animate 5s linear infinite;
+}
+@keyframes animate {
+  0%,
+  100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(360deg);
+  }
+}
+#progressbar:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #fcb045, #fd1d1d, #833ab4);
+  filter: blur(30px);
+}
+#progressbar:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #fcb045, #fd1d1d, #833ab4);
+  filter: blur(30px);
+}
